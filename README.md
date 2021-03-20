@@ -31,7 +31,6 @@ Postgres database.
 
 * `@eigenspace/codestyle` - includes lint rules, config for typescript.
 * `@eigenspace/commit-linter` - linter for commit messages.
-* `@eigenspace/helper-scripts` - it is used to publish the package.
 * `@types/*` - contains type definitions for specific library.
 * `clean-webpack-plugin` - it is used to clean dist folder before build.
 * `copy-webpack-plugin` - it is used to copy additional files into dist.

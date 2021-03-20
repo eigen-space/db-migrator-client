@@ -30,11 +30,6 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@eigenspace/argument-parser@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@eigenspace/argument-parser/-/argument-parser-1.0.2.tgz#dbb21937d1b88795398ff7d1d26d0f8742a0999b"
-  integrity sha512-LgHE7X/6F8zTsPNt62CvJSxBo/grXKpX6+4A9iVihkLdIvFJ8KVP6vJ1ekZS6Quov6dEBB5aKSN5Z08yTaBafg==
-
 "@eigenspace/argument-parser@1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@eigenspace/argument-parser/-/argument-parser-1.0.4.tgz#9c51fc5bfca474c98841942ed8440864cd455323"
@@ -51,13 +46,6 @@
   integrity sha512-UpfIkwNEmpEqTVbzcRLq2ScDkz9N+OUGnavj0dmpv9s96vYq3M+XHLT0HrP+hGjc7nZnt53KBtufEj2zR/Td3w==
   dependencies:
     "@eigenspace/argument-parser" "1.0.4"
-
-"@eigenspace/helper-scripts@3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@eigenspace/helper-scripts/-/helper-scripts-3.0.7.tgz#3915cc6522ac3575ee0c87a61284372ab810e99e"
-  integrity sha512-ncAI9irIF+DG7F/CzcEfX/hbgWoSTPNuAPA1fN6ZIDoTWsuMTogMYZi9MuvHqFoIoizagmukUOzGC0NtNatZ8w==
-  dependencies:
-    "@eigenspace/argument-parser" "1.0.2"
 
 "@eslint/eslintrc@^0.1.3":
   version "0.1.3"

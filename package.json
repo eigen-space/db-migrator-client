@@ -29,7 +29,7 @@
         "lint:fix": "yarn lint:code --fix",
         "lint:markdown": "node ./node_modules/@eigenspace/codestyle/scripts/markdown-lint.js",
         "lint": "yarn lint:code . && yarn lint:markdown",
-        "deploy:publish": "node node_modules/@eigenspace/helper-scripts/scripts/ci/publish",
+        "deploy:publish": "npx -p @eigenspace/package-publisher publish",
         "hooks:pre-push": "yarn lint && yarn build",
         "hooks:pre-commit": "lint-staged"
     },
@@ -53,7 +53,6 @@
     "devDependencies": {
         "@eigenspace/codestyle": "3.0.4",
         "@eigenspace/commit-linter": "latest",
-        "@eigenspace/helper-scripts": "3.0.7",
         "@types/node": "14.14.35",
         "@types/pg": "7.14.7",
         "clean-webpack-plugin": "2.0.2",
