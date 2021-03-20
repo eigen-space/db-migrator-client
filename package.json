@@ -1,6 +1,6 @@
 {
-    "name": "db-migrator-client",
-    "version": "1.0.0",
+    "name": "example-service",
+    "version": "1.0.1",
     "main": "dist/index.js",
     "types": "dist/",
     "files": [
