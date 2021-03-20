@@ -1,0 +1,71 @@
+{
+    "name": "example-service",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "types": "dist/",
+    "files": [
+        "/dist"
+    ],
+    "author": "Anton Kalashnikov <tohasan@yandex.ru>",
+    "contributors": [
+        "Anton Kalashnikov <tohasan@yandex.ru>",
+        "Daniil Sitdikov <hello.boriskas@gmail.com>",
+        "Nikita Sergeev <sergeev.nickitos@yandex.ru>",
+        "Nikita Agupov <nktrsk@gmail.com>"
+    ],
+    "license": "MIT",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eigen-space/db-migrator-client.git"
+    },
+    "bugs": {
+        "url": "https://github.com/eigen-space/db-migrator-client/issues"
+    },
+    "homepage": "https://github.com/eigen-space/db-migrator-client#readme",
+    "scripts": {
+        "build": "webpack --config=config/webpack/webpack.config.prod.js --progress",
+        "lint:code": "eslint --ext .ts,.js",
+        "lint:fix": "yarn lint:code --fix",
+        "lint:markdown": "node ./node_modules/@eigenspace/codestyle/scripts/markdown-lint.js",
+        "lint": "yarn lint:code . && yarn lint:markdown",
+        "deploy:publish": "node node_modules/@eigenspace/helper-scripts/scripts/ci/publish",
+        "hooks:pre-push": "yarn lint && yarn build",
+        "hooks:pre-commit": "lint-staged"
+    },
+    "husky": {
+        "hooks": {
+            "pre-push": "yarn hooks:pre-push",
+            "pre-commit": "lint-staged",
+            "commit-msg": "commit-linter --message=COMMIT_MESSAGE"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "yarn lint:fix",
+            "git add"
+        ]
+    },
+    "dependencies": {
+        "form-data": "4.0.0",
+        "pg": "8.5.1"
+    },
+    "devDependencies": {
+        "@eigenspace/codestyle": "3.0.4",
+        "@eigenspace/commit-linter": "latest",
+        "@eigenspace/helper-scripts": "3.0.7",
+        "@types/node": "14.14.35",
+        "@types/pg": "7.14.7",
+        "clean-webpack-plugin": "2.0.2",
+        "copy-webpack-plugin": "4.6.0",
+        "eslint": "7.9.0",
+        "eslint-plugin-eigenspace-script": "0.1.4",
+        "husky": "2.3.0",
+        "lint-staged": "8.1.7",
+        "ts-loader": "6.2.1",
+        "ts-node": "8.6.2",
+        "typescript": "3.8.2",
+        "webpack": "4.32.0",
+        "webpack-cli": "4.2.0"
+    }
+}
