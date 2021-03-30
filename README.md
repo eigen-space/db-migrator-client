@@ -28,6 +28,11 @@ If you want to publish the package, you need to add environment variable:
 * `NPM_REGISTRY_ACCESS_TOKEN`. It has to contain the value of the access token 
   to @eigenspace account on the public [npm registry](https://www.npmjs.com/)
   (See `.npmrc`). 
+  
+# CI configuration
+
+You can find a configured secret for `NPM_REGISTRY_ACCESS_TOKEN` in
+[Github Eigenspace secrets](https://github.com/organizations/eigen-space/settings/secrets/actions).
 
 # Why do we have that dependencies?
 
