@@ -48,8 +48,10 @@
         ]
     },
     "dependencies": {
-        "form-data": "4.0.0",
-        "pg": "8.5.1"
+        "form-data": "4.0.0"
+    },
+    "peerDependencies": {
+        "pg": "^8.5.1"
     },
     "devDependencies": {
         "@eigenspace/codestyle": "3.0.4",
@@ -62,6 +64,7 @@
         "eslint-plugin-eigenspace-script": "0.1.4",
         "husky": "2.3.0",
         "lint-staged": "8.1.7",
+        "pg": "8.5.1",
         "ts-loader": "6.2.1",
         "ts-node": "8.6.2",
         "typescript": "3.8.2",

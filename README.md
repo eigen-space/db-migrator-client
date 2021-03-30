@@ -24,8 +24,6 @@ You can use environment variables to configure the client:
 # Why do we have that dependencies?
 
 * `form-data` - it is used to send changelog archive to the migrator
-* `pg` - it is used to operate with the storage represented as
-Postgres database.
 
 # Why do we have that dev dependencies?
 
@@ -39,6 +37,10 @@ Postgres database.
   and configuration for them.
 * `husky` - used for configure git hooks.
 * `lint-staged` - used for configure linters against staged git files.
+* `pg` - it is used to operate with the storage represented as
+  Postgres database. It is in dev dependencies because we use it as a peer dependency.
+  We expect that every consumer of the library works with a database due to it needs
+  db migration. So, it will provide required dependency.
 * `ts-loader` - webpack loader to build typescript files.
 * `ts-node` - to run without build typescript.
 * `typescript` - is a superset of JavaScript that have static type-checking and ECMAScript features.
