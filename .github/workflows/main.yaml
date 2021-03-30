@@ -27,4 +27,4 @@ jobs:
       - name: Build
         run: yarn build
       - name: Publish
-        run: yarn deploy:publish --branch=${{GITHUB_REF}}
+        run: yarn deploy:publish --branch=$GITHUB_REF
