@@ -20,6 +20,14 @@ You can use environment variables to configure the client:
   service with their own migrations do not interfere with each other.
 * `CHANGELOG_ARCHIVE_PATH`, the full name/path of the changelog archive. 
   For instance, `/opt/service/changelog.tar`.
+  
+# Publishing the package
+
+If you want to publish the package, you need to add environment variable:
+
+* `NPM_REGISTRY_ACCESS_TOKEN`. It has to contain the value of the access token 
+  to @eigenspace account on the public [npm registry](registry.npmjs.org)
+  (See `.npmrc`). 
 
 # Why do we have that dependencies?
 
