@@ -1,7 +1,7 @@
 {
     "name": "@eigenspace/db-migrator-client",
     "description": "A client for Db Migrator service that helps migrate liquibase change sets",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "main": "dist/index.js",
     "types": "dist/",
     "files": [
