@@ -26,7 +26,7 @@ You can use environment variables to configure the client:
 If you want to publish the package, you need to add environment variable:
 
 * `NPM_REGISTRY_ACCESS_TOKEN`. It has to contain the value of the access token 
-  to @eigenspace account on the public [npm registry](registry.npmjs.org)
+  to @eigenspace account on the public [npm registry](https://www.npmjs.com/)
   (See `.npmrc`). 
 
 # Why do we have that dependencies?
@@ -37,6 +37,8 @@ If you want to publish the package, you need to add environment variable:
 
 * `@eigenspace/codestyle` - includes lint rules, config for typescript.
 * `@eigenspace/commit-linter` - linter for commit messages.
+* `@eigenspace/package-publisher` - it publishes the package and set the next version 
+  automatically.
 * `@types/*` - contains type definitions for specific library.
 * `clean-webpack-plugin` - it is used to clean dist folder before build.
 * `copy-webpack-plugin` - it is used to copy additional files into dist.
