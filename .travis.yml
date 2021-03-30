@@ -10,7 +10,6 @@ cache:
 script:
   - git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/eigen-space/db-migrator-client.git
   - yarn lint
-  - yarn build
   # We use additional dashes here `--` because
   # It is needed to separate the params passed to npm command itself and params passed to your script
-  - npm run deploy:publish -- --branch=$TRAVIS_BRANCH
+  - yarn build && npm run deploy:publish -- --branch=$TRAVIS_BRANCH
