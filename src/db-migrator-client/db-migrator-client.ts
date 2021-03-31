@@ -2,8 +2,8 @@
 import { Pool } from 'pg';
 import * as fs from 'fs';
 import FormData from 'form-data';
-import { promisify } from 'util';
 import { env } from '../env/env';
+import * as http from 'http';
 
 export class DbMigratorClient {
     private static GENERAL_DB = 'postgres';
@@ -29,16 +29,7 @@ export class DbMigratorClient {
 
         await this.waitForStorageUpAndRunning();
         await this.createDatabase();
-
-        const { base, migrate } = env.migrator.urls;
-        const url = `${base}${migrate}`.replace(':service', service)
-            .replace(':database', database);
-
-        const form = new FormData();
-        form.append('changelog', fs.createReadStream(changeLogArchivePath));
-        const submit = promisify(form.submit.bind(form));
-        await submit(url);
-        console.log('Migration is successfully completed');
+        await this.submitChangelog(service, database, changeLogArchivePath);
     }
 
     private async waitForStorageUpAndRunning(): Promise<void> {
@@ -94,5 +85,51 @@ export class DbMigratorClient {
         console.log(message);
 
         return isExist;
+    }
+
+    private submitChangelog(service: string, database: string, changeLogArchivePath: string): Promise<void> {
+        const { base, migrate } = env.migrator.urls;
+        const url = `${base}${migrate}`.replace(':service', service)
+            .replace(':database', database);
+
+        const form = new FormData();
+        form.append('changelog', fs.createReadStream(changeLogArchivePath));
+
+        return new Promise((resolve, reject) => {
+            form.submit(url, async (err, res) => {
+                if (err) {
+                    console.error('error:', err);
+                    reject(err);
+                    return;
+                }
+
+                const STATUS_OK = 200;
+                if (res.statusCode === STATUS_OK) {
+                    resolve();
+                    return;
+                }
+
+                const body = await this.readResponseBody(res);
+                console.error('failed response:', res.statusMessage);
+                console.error('body:', body);
+
+                reject(body);
+            });
+        });
+    }
+
+    private async readResponseBody(res: http.IncomingMessage): Promise<any> {
+        return new Promise(resolve => {
+            let body = '';
+
+            res.on('readable', () => {
+                body += res.read();
+            });
+
+            res.on('end', () => {
+                const parsedBody = JSON.parse(body);
+                resolve(parsedBody);
+            });
+        });
     }
 }
