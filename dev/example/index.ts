@@ -3,7 +3,7 @@ import { DbMigratorClient } from '../../src';
 
 main()
     .then(() => console.log('everything is ok'))
-    .catch(e => console.error('something goes wrong, error:', e));
+    .catch(() => console.error('something goes wrong'));
 
 async function main(): Promise<void> {
     const migrator = new DbMigratorClient();

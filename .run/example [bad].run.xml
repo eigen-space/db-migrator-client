@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="example [bad]" type="NodeJSConfigurationType" node-parameters="--require ts-node/register" path-to-js-file="dev/example/index.ts" working-dir="$PROJECT_DIR$">
     <envs>
-      <env name="CHANGELOG_ARCHIVE_PATH" value="C:\dev\projects\eigenspace\db-migrator-client\dev\example\data\changelog.bad.tar" />
+      <env name="CHANGELOG_ARCHIVE_PATH" value="C:\dev\projects\eigenspace\db-migrator-client\dev\example\data\bad\changelog.tar" />
       <env name="MIGRATOR_BASE_URL" value="http://localhost:4010" />
       <env name="DB_NAME" value="example_service_db" />
     </envs>
