@@ -45,6 +45,8 @@ export class DbMigratorClient {
             } catch (e) {
                 const sleepInterval = DbMigratorClient.SLEEP_INTERVAL;
                 console.warn(`The storage is not ready yet. Wait ${sleepInterval / 1000}s`);
+                console.warn('Detailed info: ', e);
+
                 setTimeout(
                     async () => {
                         await this.waitForStorageUpAndRunning();

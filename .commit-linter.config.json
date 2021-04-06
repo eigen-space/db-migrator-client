@@ -2,6 +2,7 @@
     "extends": "./node_modules/@eigenspace/commit-linter/.commit-linter.base.config.json",
     "issuePrefixes": [
         "proposal/[a-z-]+",
-        "#[0-9]+"
+        "#[0-9]+",
+        "microfix"
     ]
 }
