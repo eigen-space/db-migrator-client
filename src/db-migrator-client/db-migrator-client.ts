@@ -67,7 +67,7 @@ export class DbMigratorClient {
         const { database } = env.migrator.migration;
 
         console.log(`Create the database: '${database}'`);
-        const createDbQuery = `create database ${database};`;
+        const createDbQuery = `create database "${database}";`;
         await this.generalDbPool.query(createDbQuery);
         console.log(`Database '${database}' is successfully created`);
     }
