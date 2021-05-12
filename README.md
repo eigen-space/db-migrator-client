@@ -10,7 +10,7 @@ You can use environment variables to configure the client:
 
 * `DB_HOST`, the host of the storage which we want to apply migration on 
 * `DB_PORT`, the port of the storage which we want to apply migration on
-* `DB_USERNAME`, the username to connect to the storage
+* `DB_USER`, the username to connect to the storage
 * `DB_PASSWORD`, the password to connect to the storage
 * `DB_NAME`, the database name we are going to migrate
 * `MIGRATOR_BASE_URL`, the full base url of the db migrator: <protocol>://<host>:<port>.
